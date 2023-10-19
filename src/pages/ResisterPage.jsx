@@ -1,8 +1,9 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../authProvider/AuthProvider";
+import { AuthContext } from "../authProvider/AuthProvider";
 
-const Resister = () => {
+
+const ResisterPage = () => {
   const [loginErr,setLoginErr]=useState();
   const { createUser } = useContext(AuthContext);
   const location=useLocation();
@@ -85,4 +86,4 @@ const Resister = () => {
   );
 };
 
-export default Resister;
+export default ResisterPage;

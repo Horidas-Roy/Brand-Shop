@@ -1,14 +1,13 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../authProvider/AuthProvider";
 import Swal from 'sweetalert2'
+import { AuthContext } from "../authProvider/AuthProvider";
 
-const Login = () => {
+const LoginPage = () => {
    
-  const [success,setSuccess]=useState(false);
   const [loginErr,setLoginErr]=useState();
 
-  const { SignInUser, googleSignIn, gitHubSignIn } = useContext(AuthContext);
+  const { SignInUser, googleSignIn, } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -19,7 +18,6 @@ const Login = () => {
     const password = form.get("password");
     
     setLoginErr("")
-    setSuccess(false);
 
     
 
@@ -28,7 +26,6 @@ const Login = () => {
       .then((result) => {
         navigate(location?.state ? location.state : "/");
         console.log(result);
-        setSuccess(true);
         Swal.fire('Logged In Successfully!')
       })
       .catch((error) => {
@@ -43,28 +40,12 @@ const Login = () => {
         console.log(result.user);
 
         navigate(location?.state ? location.state : "/");
-        setSuccess(true);
         Swal.fire('Logged In Successfully!')
         
       })
       .catch((error) => {
         console.log(error);
         setLoginErr(error.message);
-      });
-  };
-
-  const handleGithubSignIn = () => {
-    gitHubSignIn()
-      .then((result) => {
-        setSuccess(true)
-        navigate(location?.state ? location.state : "/");
-        console.log(result.user);
-        Swal.fire('Logged In Successfully!')
-        
-      })
-      .catch((error) => {
-        console.log(error);
-        setLoginErr(error.message)
       });
   };
 
@@ -127,13 +108,6 @@ const Login = () => {
               className="text-blue-600 font-semibold cursor-pointer underline"
             >
               Sing In with Google
-            </span>{" "}
-            or{" "}
-            <span
-              onClick={handleGithubSignIn}
-              className="text-blue-600 font-semibold cursor-pointer underline"
-            >
-              Sign in with github{" "}
             </span>
           </p>
         </form>
@@ -142,4 +116,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;

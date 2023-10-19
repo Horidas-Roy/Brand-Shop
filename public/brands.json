@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "brandName": "ford",
+        "img": "https://i.ibb.co/ynygjQ2/Ford-Edge.jpg"
+    },
+    {
+        "id": 2,
+        "brandName": "honda",
+        "img": "https://i.ibb.co/zHyLX9w/honda-civic-sedan.webp"
+    },
+   
+    {
+        "id": 3,
+        "brandName": "mercedes",
+        "img": "https://i.ibb.co/j5c7jmS/Mercedes-Benz-A-class.jpg"
+    },
+    {
+        "id": 4,
+        "brandName": "bmw",
+        "img": "https://i.ibb.co/x8jQxjr/bmwI4.jpg"
+    },
+    
+    {
+        "id": 5,
+        "brandName": "teslas",
+        "img": "https://i.ibb.co/zhKh1dR/Tesla-Model-3.jpg"
+    },
+    {
+        "id": 6,
+        "brandName": "toyota",
+        "img": "https://i.ibb.co/tqQSrPy/toyota-Vellfire.webp"
+    }
+]

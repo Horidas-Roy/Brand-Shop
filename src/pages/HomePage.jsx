@@ -1,11 +1,34 @@
-import React from 'react';
+import { useLoaderData } from "react-router-dom";
+import Banner from "../components/Banner";
+import BrandCollection from "../components/BrandCollection";
+import Footer from "../components/Footer";
+import Ignition from "../components/Ignition";
+import VisitCarShop from "../components/VisitCarShop";
+import BrandCart from "../components/brandCart";
+
 
 const HomePage = () => {
-    return (
+    const brands=useLoaderData();
+    console.log(brands)
+  return (
+    <div>
+        <Banner></Banner>
         <div>
-            <h2>This is home</h2>
+            <div>
+            <h2 className="text-4xl font-bold text-center py-10">Brand Collection</h2>
+            <div className="grid grid-cols-3 gap-5 px-4">
+                {
+                    brands.map(brand=><BrandCart key={brand.id} brand={brand}></BrandCart>)
+                }
+            </div>
+            </div>
+             <BrandCollection></BrandCollection>
+             <VisitCarShop></VisitCarShop>
+             <Ignition></Ignition>
         </div>
-    );
+        <Footer></Footer>
+    </div>
+  );
 };
 
 export default HomePage;
