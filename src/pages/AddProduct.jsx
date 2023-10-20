@@ -13,9 +13,22 @@ const AddProduct = () => {
 
         const item={productName,brandName,productType,price,rating,img,description}
         console.log(item);
+
+        fetch('http://localhost:5000/brandCollection',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(item)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            alert("Product added successfully")
+        })
     }
   return (
-    <div className="max-w-screen-lg mx-auto p-7">
+    <div className="max-w-screen-lg mx-auto p-7 bg-[#a7a4a4]">
       <h2 className="text-center text-2xl font-semibold my-5">Add Product</h2>
       <form onSubmit={handleAddItem}>
         <div className="flex justify-center gap-6 px-10">
@@ -66,7 +79,7 @@ const AddProduct = () => {
             <textarea type="text" name="description" className="px-5 py-1 w-[40vw] rounded-lg" placeholder="write description" />
         </div>
         </div>
-        <div className="border text-center">
+        <div className="text-center">
             <input type="submit" className="bg-[#08093a] text-[#FFF] font-bold w-[40vw] py-1 rounded-lg" value="Add Item" />
         </div>
       </form>

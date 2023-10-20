@@ -1,6 +1,5 @@
 import { useLoaderData } from "react-router-dom";
 import Banner from "../components/Banner";
-import BrandCollection from "../components/BrandCollection";
 import Footer from "../components/Footer";
 import Ignition from "../components/Ignition";
 import VisitCarShop from "../components/VisitCarShop";
@@ -22,7 +21,6 @@ const HomePage = () => {
                 }
             </div>
             </div>
-             <BrandCollection></BrandCollection>
              <VisitCarShop></VisitCarShop>
              <Ignition></Ignition>
         </div>

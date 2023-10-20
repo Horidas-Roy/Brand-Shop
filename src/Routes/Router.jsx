@@ -6,6 +6,7 @@ import LoginPage from "../pages/LoginPage";
 import ResisterPage from "../pages/ResisterPage";
 import AddProduct from "../pages/AddProduct";
 import MyCart from "../pages/MyCart";
+import BrandCollection from "../components/BrandCollection";
 
 
 const router=createBrowserRouter([
@@ -34,6 +35,11 @@ const router=createBrowserRouter([
         {
             path:'/myCart',
             element:<MyCart></MyCart>
+        },
+        {
+            path:'/brandCollection/:brandName',
+            element:<BrandCollection></BrandCollection>,
+            loader:({params})=>fetch(`http://localhost:5000/brandCollection/${params.brandName}`)
         }
       ]
     }

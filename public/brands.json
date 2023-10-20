@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "brandName": "ford",
+        "brandName": "ford edge",
         "img": "https://i.ibb.co/ynygjQ2/Ford-Edge.jpg"
     },
     {
@@ -23,7 +23,7 @@
     
     {
         "id": 5,
-        "brandName": "teslas",
+        "brandName": "tesla",
         "img": "https://i.ibb.co/zhKh1dR/Tesla-Model-3.jpg"
     },
     {

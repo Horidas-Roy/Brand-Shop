@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const BrandCart = ({ brand }) => {
   const { brandName, img } = brand;
   return (
-<Link to={`/products/${brandName}`}>
+<Link to={`/brandCollection/${brandName}`}>
     <div className="card card-compact bg-base-100 shadow-xl ">
       <figure>
         <img
@@ -14,11 +14,9 @@ const BrandCart = ({ brand }) => {
           alt="Shoes"
         />
       </figure>
-      <div className="card-body">
-        <h2 className="card-title">{brandName}</h2>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
-        </div>
+      <div className=" flex justify-between items-center p-5">
+        <h2 className="card-title">Brand Name:{brandName.toUpperCase()}</h2>
+        <button className="btn btn-primary">Details</button>
       </div>
     </div>
     </Link>
