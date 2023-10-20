@@ -27,7 +27,10 @@ const Details = () => {
                     {/* <h2>Rating:{brand.rating}</h2> */}
                     <div><Rating rating={rating}></Rating></div>
                   </div>
-                  <div>{description}...</div>
+                  <div>{description}</div>
+                  <h2 className="text-center mt-10">
+                    <button className="bg-purple-600 px-5 py-2 rounded-lg text-white font-bold">Add to Card</button>
+                  </h2>
                 </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../authProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const ResisterPage = () => {
@@ -27,6 +28,7 @@ const ResisterPage = () => {
     .then(result=>{
       console.log(result.user);
       navigate(location?.state?location.state:'/');
+      Swal.fire('Resister is Successfull!')
       
     })
     .catch(error=>{

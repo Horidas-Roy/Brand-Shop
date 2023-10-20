@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import Rating from "./RatingStar";
+import Advertisement from "./Advertisement";
 
 const BrandCollection = () => {
   const brands = useLoaderData();
@@ -9,6 +10,10 @@ const BrandCollection = () => {
 
   return (
     <div>
+      <div>
+          <Advertisement></Advertisement>
+      </div>
+      <div>
       <h2 className="text-4xl font-bold text-center py-5">
         {brandName.toUpperCase()}'s Collections
       </h2>
@@ -46,6 +51,7 @@ const BrandCollection = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };
