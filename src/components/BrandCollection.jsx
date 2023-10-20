@@ -1,11 +1,12 @@
 import React from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import Rating from "./RatingStar";
 
 const BrandCollection = () => {
   const brands = useLoaderData();
   const { brandName } = useParams();
   console.log(brands);
+
   return (
     <div>
       <h2 className="text-4xl font-bold text-center py-5">
@@ -36,8 +37,8 @@ const BrandCollection = () => {
                   </div>
                   <div>{brand.description.slice(0, 200)}...</div>
                   <div className="card-actions justify-center">
-                    <button className="btn btn-primary">Details</button>
-                    <button className="btn btn-primary">Update</button>
+                    <Link to={`/details/${brand._id}`}><button className="btn btn-primary">Details</button></Link>
+                    <Link to={`/update/${brand._id}`}><button className="btn btn-primary">Update</button></Link>
                   </div>
                 </div>
               </div>

@@ -7,6 +7,8 @@ import ResisterPage from "../pages/ResisterPage";
 import AddProduct from "../pages/AddProduct";
 import MyCart from "../pages/MyCart";
 import BrandCollection from "../components/BrandCollection";
+import Details from "../components/Details";
+import Update from "../components/Update";
 
 
 const router=createBrowserRouter([
@@ -40,6 +42,16 @@ const router=createBrowserRouter([
             path:'/brandCollection/:brandName',
             element:<BrandCollection></BrandCollection>,
             loader:({params})=>fetch(`http://localhost:5000/brandCollection/${params.brandName}`)
+        },
+        {
+            path:'/details/:id',
+            element:<Details></Details>,
+            loader:({params})=>fetch(`http://localhost:5000/details/${params.id}`)
+        },
+        {
+            path:'/update/:id',
+            element:<Update></Update>,
+            loader:({params})=>fetch(`http://localhost:5000/update/${params.id}`)
         }
       ]
     }
