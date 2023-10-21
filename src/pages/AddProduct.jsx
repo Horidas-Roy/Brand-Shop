@@ -14,7 +14,7 @@ const AddProduct = () => {
         const item={productName,brandName,productType,price,rating,img,description}
         console.log(item);
 
-        fetch('https://brand-shop-server-dryyolk8m-horidas-roys-projects.vercel.app/brandCollection',{
+        fetch('https://brand-shop-server-dopm0ug64-horidas-roys-projects.vercel.app/brandCollection',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

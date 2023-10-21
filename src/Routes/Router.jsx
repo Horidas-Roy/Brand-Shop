@@ -43,17 +43,17 @@ const router=createBrowserRouter([
         {
             path:'/brandCollection/:brandName',
             element:<BrandCollection></BrandCollection>,
-            loader:({params})=>fetch(`https://brand-shop-server-dryyolk8m-horidas-roys-projects.vercel.app/brandCollection/${params.brandName}`)
+            loader:({params})=>fetch(`https://brand-shop-server-dopm0ug64-horidas-roys-projects.vercel.app/brandCollection/${params.brandName}`)
         },
         {
             path:'/details/:id',
             element:<PrivateRoute><Details></Details></PrivateRoute>,
-            loader:({params})=>fetch(`https://brand-shop-server-dryyolk8m-horidas-roys-projects.vercel.app/details/${params.id}`)
+            loader:({params})=>fetch(`https://brand-shop-server-dopm0ug64-horidas-roys-projects.vercel.app/details/${params.id}`)
         },
         {
             path:'/update/:id',
             element:<PrivateRoute><Update></Update></PrivateRoute>,
-            loader:({params})=>fetch(`https://brand-shop-server-dryyolk8m-horidas-roys-projects.vercel.app/update/${params.id}`)
+            loader:({params})=>fetch(`https://brand-shop-server-dopm0ug64-horidas-roys-projects.vercel.app/update/${params.id}`)
         }
       ]
     }

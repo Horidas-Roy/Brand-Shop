@@ -10,7 +10,7 @@ const MyCart = () => {
     const [loader,setLoader]=useState(true)
 
     useEffect(()=>{
-        fetch(`https://brand-shop-server-dryyolk8m-horidas-roys-projects.vercel.app/cardCollection/${user.email}`)
+        fetch(`https://brand-shop-server-dopm0ug64-horidas-roys-projects.vercel.app/cardCollection/${user.email}`)
         .then(res=>res.json())
         .then(data=>{
             // console.log(data)

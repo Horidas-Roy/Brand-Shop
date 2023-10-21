@@ -30,7 +30,7 @@ const Update = () => {
         const item={productName,brandName,productType,price,rating,img,description}
         console.log(item);
 
-        fetch(`https://brand-shop-server-dryyolk8m-horidas-roys-projects.vercel.app/update/${_id}`,{
+        fetch(`https://brand-shop-server-dopm0ug64-horidas-roys-projects.vercel.app/update/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'

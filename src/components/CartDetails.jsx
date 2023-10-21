@@ -29,7 +29,7 @@ const CartDetails = ({cart,carts,setCarts}) => {
       })
       .then(result=>{
            if(result.isConfirmed){
-            fetch(`https://brand-shop-server-dryyolk8m-horidas-roys-projects.vercel.app/card/${id}`,{
+            fetch(`https://brand-shop-server-dopm0ug64-horidas-roys-projects.vercel.app/card/${id}`,{
               method:'DELETE'
             })
             .then(res=>res.json())
