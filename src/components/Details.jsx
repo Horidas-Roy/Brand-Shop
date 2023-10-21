@@ -1,11 +1,30 @@
-import React from "react";
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import Rating from "./RatingStar";
+import { AuthContext } from "../authProvider/AuthProvider";
 
 const Details = () => {
   const brand = useLoaderData();
+  const {user}=useContext(AuthContext);
   console.log(brand);
   const {brandName,img,description,price,productName,productType,rating}=brand
+
+  const handleAddToCard=()=>{
+    brand.email=user.email
+    console.log('user email:',brand)
+    fetch(`http://localhost:5000/cardCollection`,{
+      method:'POST',
+      headers:{
+        'content-type':'application/json'
+      },
+      body:JSON.stringify(brand)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      console.log(data)
+      alert(`${productName} is added to Your card successfully`)
+    })
+  }
   return (
     <div className="card bg-base-100 shadow-xl">
       <figure>
@@ -29,7 +48,7 @@ const Details = () => {
                   </div>
                   <div>{description}</div>
                   <h2 className="text-center mt-10">
-                    <button className="bg-purple-600 px-5 py-2 rounded-lg text-white font-bold">Add to Card</button>
+                    <button onClick={handleAddToCard} className="bg-purple-600 px-5 py-2 rounded-lg text-white font-bold">Add to Card</button>
                   </h2>
                 </div>
       </div>

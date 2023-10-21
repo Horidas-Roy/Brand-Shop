@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../authProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { FaUserCircle } from 'react-icons/fa';
 
 const Navbar = () => {
     const {user,logOut}=useContext(AuthContext);
@@ -65,7 +66,10 @@ const Navbar = () => {
            
            <div className="flex justify-center items-center gap-2">
             <h2>{user?.displayName}</h2>
-            <img className="h-[40px] w-[40px] rounded-full" src={user?.photoURL}></img>
+            {  user.photoURL?
+              <img className="h-[40px] w-[40px] rounded-full" src={user?.photoURL}></img>
+              :<div className="h-[40px] w-[40px] rounded-full bg-[#FFF] text-black flex justify-center items-center text-3xl"><FaUserCircle></FaUserCircle></div>
+            }
             <button onClick={handleSignOut} className="btn">LogOut</button>
            </div>
            :
