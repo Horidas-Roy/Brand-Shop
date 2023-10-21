@@ -1,5 +1,6 @@
 
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Update = () => {
   const brand = useLoaderData();
@@ -29,7 +30,7 @@ const Update = () => {
         const item={productName,brandName,productType,price,rating,img,description}
         console.log(item);
 
-        fetch(`http://localhost:5000/update/${_id}`,{
+        fetch(`https://brand-shop-server-dryyolk8m-horidas-roys-projects.vercel.app/update/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'
@@ -40,7 +41,7 @@ const Update = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
-            alert('updated successfully')
+            Swal.fire('updated successfully')
         })
   };
   return (
@@ -49,7 +50,7 @@ const Update = () => {
         Update Product
       </h2>
       <form onSubmit={handleUpdate}>
-        <div className="flex justify-center gap-6 px-10">
+        <div className="flex flex-col md:flex-row justify-center gap-6 px-10">
           <div className="flex justify-center">
             <div className="space-y-1">
               <h2 className="font-medium">Product Name</h2>
@@ -63,6 +64,7 @@ const Update = () => {
             </div>
           </div>
           <div className="flex justify-center">
+            <div className="flex justify-center">
             <div className="space-y-1">
               <h2 className="font-medium">Brand Name</h2>
               <input
@@ -73,10 +75,11 @@ const Update = () => {
                 placeholder="Enter Brand Name"
               />
             </div>
+            </div>
           </div>
         </div>
-        <div className="flex justify-center gap-6 px-10">
-          <div className="flex justify-center">
+        <div className="flex flex-col md:flex-row justify-center gap-6 px-10">
+          <div className="flex justify-center pt-3">
             <div className="space-y-1">
               <h2 className="font-medium">Product Type</h2>
               <input
@@ -101,7 +104,7 @@ const Update = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center gap-6 px-10">
+        <div className="flex flex-col md:flex-row justify-center pt-3 gap-6 px-10">
           <div className="flex justify-center">
             <div className="space-y-1">
               <h2 className="font-medium">Rating</h2>
@@ -134,7 +137,7 @@ const Update = () => {
               type="text"
               name="description"
               defaultValue={description}
-              className="px-5 py-1 w-[40vw] rounded-lg"
+              className="px-5 py-1 w-full md:w-[40vw] rounded-lg"
               placeholder="write description"
             />
           </div>
@@ -142,7 +145,7 @@ const Update = () => {
         <div className="text-center">
           <input
             type="submit"
-            className="bg-[#08093a] text-[#FFF] font-bold w-[40vw] py-1 rounded-lg"
+            className="bg-[#08093a] text-[#FFF] font-bold w-fit px-5 md:w-[40vw] py-1 rounded-lg"
             value="Update Item"
           />
         </div>

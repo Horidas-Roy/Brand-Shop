@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import Rating from "./RatingStar";
 import { AuthContext } from "../authProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Details = () => {
   const brand = useLoaderData();
@@ -12,7 +13,7 @@ const Details = () => {
   const handleAddToCard=()=>{
     brand.email=user.email
     console.log('user email:',brand)
-    fetch(`http://localhost:5000/cardCollection`,{
+    fetch(`https://brand-shop-server-qaafunooj-horidas-roys-projects.vercel.app/cardCollection`,{
       method:'POST',
       headers:{
         'content-type':'application/json'
@@ -22,7 +23,7 @@ const Details = () => {
     .then(res=>res.json())
     .then(data=>{
       console.log(data)
-      alert(`${productName} is added to Your card successfully`)
+      Swal.fire(`${productName} is added to Your card successfully`)
     })
   }
   return (
@@ -35,7 +36,7 @@ const Details = () => {
         />
       </figure>
       <div className="card-body">
-      <div className="card-body">
+      <div>
                   <h2 className="text-center text-3xl font-bold">{productName}</h2>
                   <div className=" flex justify-between items-center text-lg font-semibold">
                     <h2>Band Name:{brandName}</h2>

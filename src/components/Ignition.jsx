@@ -4,9 +4,9 @@ import ignition3 from "../../src/assets/images/ignition3.jpg";
 
 const Ignition = () => {
   return (
-    <div className="p-20">
+    <div className="px-4 md:p-20 pb-10">
       <h2 className="text-4xl font-bold mb-10">Ignition Stories.</h2>
-      <div className="flex gap-10">
+      <div className="flex flex-col md:flex-row gap-10">
         <div className="flex-1">
           <img className="rounded-lg" src={ignition1} alt="" />
           <p className="text-2xl font-bold mt-2">
@@ -14,7 +14,7 @@ const Ignition = () => {
           </p>
           <p className="text-blue-800 font-bold text-sm">CAR SHOPPING</p>
         </div>
-        <div className="flex-1 flex gap-5">
+        <div className="flex-1 flex flex-col md:flex-row gap-5">
           <div>
             <img className="rounded-lg" src={ignition2} alt="" />
             <p className="text-[20px] font-bold mt-2">

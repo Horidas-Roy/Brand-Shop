@@ -18,8 +18,8 @@ const ResisterPage = () => {
 
     setLoginErr("");
 
-    if(!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/.test(password)){
-      setLoginErr('password must have contain Minimum six characters, at least one letter, one number and one special character:');
+    if(!/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/.test(password)){
+      setLoginErr('password must have contain Minimum six characters, at least one capital letter, one number and one special character:');
       return;
    }
     

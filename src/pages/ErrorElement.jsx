@@ -2,8 +2,8 @@ import React from 'react';
 
 const ErrorElement = () => {
     return (
-        <div>
-            <h2>OOPps! Page not Found</h2>
+        <div className='h-[100vh] flex justify-center items-center'>
+            <h2 className='text-4xl font-bold'>OOPps! Page not Found</h2>
         </div>
     );
 };

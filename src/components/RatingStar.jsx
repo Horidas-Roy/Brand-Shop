@@ -16,11 +16,11 @@ const Rating = ({ rating }) => {
     );
   });
   return (
-    <wrapper>
-        <div className="flex">
-            {ratingStar}
+    <>
+        <div className="flex gap-2">
+            <span className="flex">{ratingStar}</span><span className="text-base">{rating}</span>
         </div>
-    </wrapper>
+    </>
   );
 };
 

@@ -38,22 +38,22 @@ const router=createBrowserRouter([
         {
             path:'/myCart',
             element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
-            // loader:({params})=>fetch(`http://localhost:5000/cardCollection/${params.email}`)
+            // loader:({params})=>fetch(`https://brand-shop-server-qaafunooj-horidas-roys-projects.vercel.app/cardCollection/${params.email}`)
         },
         {
             path:'/brandCollection/:brandName',
             element:<BrandCollection></BrandCollection>,
-            loader:({params})=>fetch(`http://localhost:5000/brandCollection/${params.brandName}`)
+            loader:({params})=>fetch(`https://brand-shop-server-dryyolk8m-horidas-roys-projects.vercel.app/brandCollection/${params.brandName}`)
         },
         {
             path:'/details/:id',
             element:<PrivateRoute><Details></Details></PrivateRoute>,
-            loader:({params})=>fetch(`http://localhost:5000/details/${params.id}`)
+            loader:({params})=>fetch(`https://brand-shop-server-dryyolk8m-horidas-roys-projects.vercel.app/details/${params.id}`)
         },
         {
             path:'/update/:id',
             element:<PrivateRoute><Update></Update></PrivateRoute>,
-            loader:({params})=>fetch(`http://localhost:5000/update/${params.id}`)
+            loader:({params})=>fetch(`https://brand-shop-server-dryyolk8m-horidas-roys-projects.vercel.app/update/${params.id}`)
         }
       ]
     }
