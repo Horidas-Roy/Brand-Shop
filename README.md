@@ -3,6 +3,11 @@
 
 live link: https://auth-moha-milon-ab3ea.web.app/
 
+# Technology
+React,Node,Express,Mongodb,Firebase,Tailwind
+
+# Features
+
 •This website provide athentication system
 
 
