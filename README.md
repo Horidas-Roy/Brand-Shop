@@ -3,6 +3,8 @@
 
 live link: https://auth-moha-milon-ab3ea.web.app/
 
+server code link: https://github.com/Horidas-Roy/Brand-shop-server
+
 # Technology
 React,Node,Express,Mongodb,Firebase,Tailwind
 
